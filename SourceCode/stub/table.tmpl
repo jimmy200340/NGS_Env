@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>The summary of fastp reports</title>
+<style>
+table { border-collapse: collapse; border: solid 1px black; }
+th { border: solid 1px black; background: #A6DBF7; text-align: center; color: black; }
+td { border: solid 1px black; background: #DAF7A6; text-align: center; color: black; }
+</style>
+</head>
+<body>
+<table>
+<tr><th>Sample ID</th><th>Sample Name (from customer)</th><th>Total reads</th><th>Total bases</th><th>Q20 rate</th><th>Q30 rate</th><th>Read1 mean length</th><th>Read2 mean length</th><th>Expected yields Mbases (Expected coverage)</th><th>Deduplication rate</th><th>Estimate coverage</th><th>Estimate coverage (Dedup) </th> <th> Estimate - Expected coverage </th> <th> Estimate - Expected coverage (Dedup) </th> </tr>
+[% FOREACH row IN rows %]
+<tr>
+<td>[% row.0 %]</td>
+<td>[% row.1 %]</td>
+<td>[% row.2 %]</td>
+<td>[% row.3 %]</td>
+<td>[% row.4 %]</td>
+<td>[% row.5 %]</td>
+<td>[% row.6 %]</td>
+<td>[% row.7 %]</td>
+<td>[% row.8 %]</td>
+<td>[% row.9 %]</td>
+<td>[% row.10 %]</td>
+<td>[% row.11 %]</td>
+<td style="background: [% IF row.12 >  0 %]green[% ELSE %]red[%END %];">[% row.12 %]</td>
+<td style="background: [% IF row.13 >  0 %]green[% ELSE %]red[%END %];">[% row.13 %]</td>
+</tr>
+[% END %]
+</table>
+</body>
+</html>
